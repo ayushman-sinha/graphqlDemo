@@ -134,3 +134,71 @@ app.use('/graphql', expressGraphQL({
 }))
 app.listen(5000, () => console.log('Server Running'))
 
+/*
+https://leetcode.com/graphql?query=query 
+{ 
+    matchedUser(username: "ayushman_sinha") 
+    {
+        username
+        submitStats: submitStatsGlobal 
+        {
+            acSubmissionNum 
+            {
+                difficulty
+                count
+                submissions
+                
+            }
+        }
+        contestRating 
+    }
+}
+
+
+https://leetcode.com/graphql?query=query
+{     
+    
+      userContestRanking(username:  "ayushman_sinha") 
+      {
+        attendedContestsCount
+        rating
+        globalRanking
+        totalParticipants
+        topPercentage    
+      }
+      userContestRankingHistory(username: "ayushman_sinha")
+      {
+        attended
+        trendDirection
+        problemsSolved
+        totalProblems
+        finishTimeInSeconds
+        rating
+        ranking
+        contest 
+        {
+          title
+          startTime
+        }
+      }
+} 
+
+
+
+    query userContestRankingInfo($username: String!) {
+  userContestRanking(username: $username) {
+    attendedContestsCount
+    rating
+    globalRanking
+    totalParticipants
+    topPercentage
+    badge {
+      name
+    }
+  }
+ 
+}
+    
+
+*/
+
